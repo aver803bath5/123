@@ -13,4 +13,19 @@ $(document).ready(function(){
     }
   );
   $('select').material_select();
+
+  var slideItems = $('.slide-item');
+  var slideCount = 0;
+  setInterval(function() {
+    var currentSlide = $(slideItems[slideCount]);
+    currentSlide.addClass('animated slideOutLeft');
+    setTimeout(function(){
+      currentSlide.removeClass('active slideOutLeft slideInRight');
+      slideCount += 1;
+      if (slideCount === 3) {
+        slideCount = 0;
+      }
+      $(slideItems[slideCount]).addClass('active animated slideInRight');
+    }, 300);
+  }, 3000);
 });

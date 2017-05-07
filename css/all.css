@@ -1,7 +1,39 @@
-html {
-  font-family: 'Noto Sans TC', sans-serif;
-}
+html, body {
+  font-family: "Noto Sans", "Noto Sans CJK TC", sans-serif; }
 
-.media-link {
-  font-size: 3rem
-}
+.slider-container {
+  right: 0;
+  position: relative;
+  white-space: nowrap;
+  width: 100%;
+  height: 800px; }
+
+.slide-list {
+  overflow: hidden;
+  transition: 0.5s ease;
+  width: 100%;
+  height: 100%; }
+
+.slide-item {
+  display: none;
+  transition: 0.5s ease;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%; }
+
+.slide-list .active {
+  display: block; }
+
+.slide-item a {
+  display: block;
+  width: 100%;
+  height: 100%; }
+
+@media screen and (max-width: 792px) {
+  .slider-container {
+    width: 100%;
+    height: 400px; } }
+
+/*# sourceMappingURL=all.css.map */

@@ -1,0 +1,41 @@
+@mixin size($w, $h: $w)
+  width: $w
+  height: $h
+
+@mixin flex_center
+  display: flex
+  justify-content: center
+  align-items: center
+
+html, body
+  font-family: "Noto Sans", "Noto Sans CJK TC", sans-serif
+
+.slider-container
+  right: 0
+  position: relative
+  white-space: nowrap
+  +size(100%, 800px)
+
+.slide-list
+  overflow: hidden
+  transition: .5s ease
+  +size(100%, 100%)
+
+.slide-item
+  display: none
+  transition: 0.5s ease
+  background-position: center
+  background-size: contain
+  background-repeat: no-repeat
+  +size(100%)
+
+.slide-list .active
+  display: block
+
+.slide-item a
+  display: block
+  +size(100%)
+
+@media screen and (max-width: 792px)
+  .slider-container
+    +size(100%, 400px)
