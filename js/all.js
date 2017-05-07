@@ -26,6 +26,6 @@ $(document).ready(function(){
         slideCount = 0;
       }
       $(slideItems[slideCount]).addClass('active animated slideInRight');
-    }, 300);
+    }, 500);
   }, 3000);
 });
