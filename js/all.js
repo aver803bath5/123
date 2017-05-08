@@ -17,22 +17,26 @@ $(document).ready(function(){
   var sliderContainer = $('.slider-container');
   var slideCount = 0;
   var isSliderIntervalPause = false;
+  var sliderPoints = $('.slider-point').siblings();
+  var activeSlideID = slideCount % 3;
   var sliderTimer = setInterval(function() {
-    console.log(isSliderIntervalPause);
     if (isSliderIntervalPause) {
       return false;
     } else {
       slideCount = slideCount + 100;
-      if (slideCount >= 200) {
-        slideCount = -100;
+      if (slideCount > 200) {
+        slideCount = 0;
       }
       sliderContainer.css({
         transform: "translateX(-" + slideCount.toString() + "%)",
       });
+      activeSlideID = slideCount % 3;
+      $(sliderPoints).removeClass('active');
+      $(sliderPoints[activeSlideID]).addClass('active');
     }
-  }, 3000);
+  }, 3500);
 
-  sliderContainer.hover(function() {
+  $('.slider-container, .slider-point-container').hover(function() {
     isSliderIntervalPause = true;
   }, function() {
     isSliderIntervalPause = false;
@@ -48,6 +52,9 @@ $(document).ready(function(){
     sliderContainer.css({
       transform: "translateX(-" + slideCount.toString() + "%)",
     });
+    activeSlideID = slideCount % 3;
+    $(sliderPoints).removeClass('active');
+    $(sliderPoints[activeSlideID]).addClass('active');
   });
 
   $('.slide-right').on('click', function(event) {
@@ -60,5 +67,19 @@ $(document).ready(function(){
     sliderContainer.css({
       transform: "translateX(-" + slideCount.toString() + "%)",
     });
+    activeSlideID = slideCount % 3;
+    $(sliderPoints).removeClass('active');
+    $(sliderPoints[activeSlideID]).addClass('active');
+  });
+
+  $('.slider-point-container').on('click',  '.slider-point', function(event) {
+    var sliderPointerID = $(this).data('id');
+    slideCount = (sliderPointerID - 1) * 100;
+    sliderContainer.css({
+      transform: "translateX(-" + slideCount.toString() + "%)",
+    });
+    activeSlideID = slideCount % 3;
+    $(sliderPoints).removeClass('active');
+    $(sliderPoints[activeSlideID]).addClass('active');
   });
 });
