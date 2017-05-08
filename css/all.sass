@@ -9,21 +9,20 @@
 
 html, body
   font-family: "Noto Sans", "Noto Sans CJK TC", sans-serif
+  overflow-x: hidden
 
 .slider-container
-  right: 0
   position: relative
-  white-space: nowrap
+  right: 0
+  transition: 0.8s ease
   +size(100%, 600px)
 
 .slide-list
-  overflow: hidden
-  transition: .5s ease
+  white-space: nowrap
   +size(100%, 100%)
 
 .slide-item
-  display: none
-  transition: 0.5s ease
+  display: inline-block
   background-position: center
   background-size: contain
   background-repeat: no-repeat
@@ -36,6 +35,67 @@ html, body
   display: block
   +size(100%)
 
+.slide-left
+  position: absolute
+  left: 2rem
+  top: 350px
+  padding: 1rem
+  border: solid 1px #131313
+  border-radius: 65%
+  cursor: pointer
+  &:hover
+    background-color: black
+    color: #fff
+    transition: .5s ease
+
+.slide-right
+  position: absolute
+  right: 2rem
+  top: 350px
+  padding: 1rem
+  border: solid 1px #131313
+  border-radius: 65%
+  cursor: pointer
+  &:hover
+    background-color: black
+    color: #fff
+    transition: .5s ease
+
+.slider-point
+  display: inline-block
+  padding: 1rem
+  margin-left: .5rem
+  border: 1px #b0bec5 solid
+  border-radius: 50%
+  cursor: pointer
+  &:hover
+    background-color: #b0bec5
+    transition: .5s ease
+
+.slider-point-container .active
+  background-color: #b0bec5
+
 @media screen and (max-width: 792px)
   .slider-container
     +size(100%, 400px)
+
+  .slide-left, .slide-right
+    top: 250px
+
+@media screen and (max-width: 480px)
+  .slider-container
+    +size(100%, 250px)
+
+  .slide-left
+    left: 1px
+
+  .slide-right
+    right: 1px
+
+  .slide-left, .slide-right
+    top: 150px
+    border: none
+    border-radius: 0
+    &:hover
+      color: black
+      background-color: transparent
