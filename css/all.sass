@@ -11,13 +11,21 @@ html, body
   font-family: "Noto Sans", "Noto Sans CJK TC", sans-serif
   overflow-x: hidden
 
+.brand-logo img
+  vertical-align: middle
+
+.nav-search-input input
+  padding: 0 !important
+
 .slider-container
   position: relative
   right: 0
   transition: 0.8s ease
-  +size(100%, 600px)
+  // transform: translateX(-100%)
+  +size(100%, 800px)
 
 .slide-list
+  margin-top: 2px
   white-space: nowrap
   +size(100%, 100%)
 
@@ -37,29 +45,42 @@ html, body
 
 .slide-left
   position: absolute
-  left: 2rem
-  top: 350px
-  padding: 1rem 1.2rem
-  border: solid 1px #131313
-  border-radius: 50%
+  top: 64px
+  bottom: 70px
+  width: 4rem
+  background-color: transparent
   cursor: pointer
+  background-image: linear-gradient(to right,rgba(0,0,0,.5) 0,rgba(0,0,0,.0001) 100%)
+  opacity: .5
   &:hover
-    background-color: black
-    color: #fff
+    color: #000000
+    opacity: 1
     transition: .5s ease
+
+.slide-left i
+  position: absolute
+  top: 50%
+  left: 1.3rem
 
 .slide-right
   position: absolute
-  right: 2rem
-  top: 350px
-  padding: 1rem 1.2rem
-  border: solid 1px #131313
-  border-radius: 50%
+  right: 0
+  top: 64px
+  bottom: 70px
+  width: 4rem
+  background-color: transparent
   cursor: pointer
+  background-image: linear-gradient(to left,rgba(0,0,0,.5) 0,rgba(0,0,0,.0001) 100%)
+  opacity: .5
   &:hover
-    background-color: black
-    color: #fff
+    color: #000000
+    opacity: 1
     transition: .5s ease
+
+.slide-right i
+  position: absolute
+  top: 50%
+  right: 1.3rem
 
 .slider-point
   display: inline-block
@@ -75,34 +96,36 @@ html, body
 .slider-point-container .active
   background-color: #b0bec5
 
+.media-link a
+  font-size: 2.5rem
+  margin-left: .5rem
+
+.product-type-list h4
+  margin: 0
+  padding: 1rem
+  border-bottom: 1px rgba(0, 0, 0, 0.1) solid
+
 @media screen and (max-width: 1280px)
   .slider-container
     +size(100%, 500px)
 
   .slide-left, .slide-right
-    top: 250px
+    bottom: 390px
 
-@media screen and (max-width: 792px)
+@media screen and (max-width: 768px)
   .slider-container
     +size(100%, 400px)
 
   .slide-left, .slide-right
-    top: 250px
+    bottom: 490px
+
+  .product-container
+    width: 100% !important
 
 @media screen and (max-width: 480px)
   .slider-container
     +size(100%, 250px)
 
-  .slide-left
-    left: 1px
-
-  .slide-right
-    right: 1px
-
   .slide-left, .slide-right
-    top: 150px
-    border: none
-    border-radius: 0
-    &:hover
-      color: black
-      background-color: transparent
+    top: 55px
+    bottom: 250px
