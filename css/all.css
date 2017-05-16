@@ -2,11 +2,74 @@ html, body {
   font-family: "Noto Sans", "Noto Sans CJK TC", sans-serif;
   overflow-x: hidden; }
 
+.nav {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  overflow: hidden;
+  box-shadow: 0 0 5px #333;
+  white-space: nowrap; }
+
+.nav-container {
+  float: none !important; }
+
+.logo-content-wrap {
+  padding: 0.9rem;
+  padding-right: 2rem;
+  display: inline-block;
+  height: 100%;
+  border-radius: 25px; }
+
+.logo-icon {
+  height: 80px -20px;
+  width: 80px;
+  float: left; }
+
+.chinese-logo-text {
+  font-size: 1.6rem; }
+
+.en-logo-text {
+  font-size: 0.8rem; }
+
+.nav-list {
+  height: 100%;
+  margin: 0;
+  line-height: 80px; }
+
+.nav-list li {
+  display: inline-block;
+  height: 100%;
+  transition: 0.5s ease; }
+
+.nav-list li a {
+  border-radius: 1px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  font-size: 1.1rem;
+  padding-bottom: 0.5rem;
+  color: white; }
+  .nav-list li a:hover {
+    background-color: #e0e0e0; }
+
+.logo-text-wrap {
+  float: left; }
+
 .brand-logo img {
   vertical-align: middle; }
 
+.logo-text {
+  font-size: 1rem; }
+
 .nav-search-input input {
   padding: 0 !important; }
+
+.navbar-button {
+  float: left;
+  line-height: 80px;
+  color: #111;
+  font-size: 1.5rem;
+  margin-left: 1rem; }
 
 .slider-container {
   position: relative;
@@ -39,7 +102,7 @@ html, body {
 
 .slide-left {
   position: absolute;
-  top: 64px;
+  top: 80px;
   bottom: 70px;
   width: 4rem;
   background-color: transparent;
@@ -59,7 +122,7 @@ html, body {
 .slide-right {
   position: absolute;
   right: 0;
-  top: 64px;
+  top: 80px;
   bottom: 70px;
   width: 4rem;
   background-color: transparent;
@@ -99,14 +162,31 @@ html, body {
   padding: 1rem;
   border-bottom: 1px rgba(0, 0, 0, 0.1) solid; }
 
+.clear {
+  clear: both; }
+
 @media screen and (max-width: 1280px) {
   .slider-container {
     width: 100%;
     height: 500px; }
 
   .slide-left, .slide-right {
-    bottom: 390px; } }
+    bottom: 30px; } }
 @media screen and (max-width: 768px) {
+  .logo-icon {
+    width: 80px; }
+
+  .logo-content-wrap {
+    display: block;
+    width: 50%;
+    text-align: center;
+    margin: 0 auto; }
+
+  .logo-content-wrap .logo-icon, .logo-content-wrap .logo-text-wrap {
+    display: inline-block;
+    float: none;
+    height: 100%; }
+
   .slider-container {
     width: 100%;
     height: 400px; }
@@ -117,12 +197,16 @@ html, body {
   .product-container {
     width: 100% !important; } }
 @media screen and (max-width: 480px) {
+  .logo-content-wrap {
+    width: 60%;
+    padding-left: 0;
+    padding-right: 1rem; }
+
   .slider-container {
     width: 100%;
     height: 250px; }
 
   .slide-left, .slide-right {
-    top: 55px;
     bottom: 250px; } }
 
 /*# sourceMappingURL=all.css.map */
