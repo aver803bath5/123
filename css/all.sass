@@ -6,15 +6,16 @@
   display: flex
   justify-content: center
   align-items: center
-
 $navheight: 80px
 $sliderpointertop: $navheight
 
 html, body
   font-family: "Noto Sans", "Noto Sans CJK TC", sans-serif
   overflow-x: hidden
-
+.nav-slider-wrap
+  position: relative
 .nav
+  // position: relative
   top: 0
   left: 0
   width: 100%
@@ -24,7 +25,6 @@ html, body
   white-space: nowrap
 .nav-container
   float: none !important
-
 .logo-content-wrap
   padding-top: .3rem
   padding-bottom: .1rem
@@ -33,28 +33,22 @@ html, body
   display: inline-block
   border-radius: 25px
   margin-top: .5rem
-
 .logo-icon
   height: $navheight -20px
   width: $navheight
   float: left
-
 .chinese-logo-text
   font-size: 1.6rem
-
 .en-logo-text
   font-size: .8rem
-
 .nav-list
   height: 100%
   margin: 0
   line-height: $navheight
-
 .nav-list li
   display: inline-block
   height: 100%
   transition: .5s ease
-
 .nav-list li a
   border-radius: 1px
   padding-left: 1rem
@@ -64,52 +58,40 @@ html, body
   color: white
   &:hover
     background-color: #e0e0e0
-
 .logo-text-wrap
   float: left
-
 .brand-logo img
   vertical-align: middle
-
 .logo-text
   font-size: 1rem
-
 .nav-search-input input
   padding: 0 !important
-
 .navbar-button
   float: left
   line-height: $navheight
   color: #111
   font-size: 1.5rem
   margin-left: 1rem
-
 .slider-container
-  position: relative
   right: 0
   transition: 0.8s ease
   // transform: translateX(-100%)
   +size(100%, 800px)
-
 .slide-list
   margin-top: 2px
   white-space: nowrap
   +size(100%, 100%)
-
 .slide-item
   display: inline-block
   background-position: center
   background-size: contain
   background-repeat: no-repeat
   +size(100%)
-
 .slide-list .active
   display: block
-
 .slide-item a
   display: block
   +size(100%)
-
 .slide-left
   position: absolute
   top: $sliderpointertop
@@ -123,12 +105,10 @@ html, body
     color: #000000
     opacity: 1
     transition: .5s ease
-
 .slide-left i
   position: absolute
   top: 50%
   left: 1.3rem
-
 .slide-right
   position: absolute
   right: 0
@@ -143,12 +123,10 @@ html, body
     color: #000000
     opacity: 1
     transition: .5s ease
-
 .slide-right i
   position: absolute
   top: 50%
   right: 1.3rem
-
 .slider-point
   display: inline-block
   padding: 1rem
@@ -159,28 +137,26 @@ html, body
   &:hover
     background-color: #b0bec5
     transition: .5s ease
-
 .slider-point-container .active
   background-color: #b0bec5
-
 .media-link a
   font-size: 2.5rem
   margin-left: .5rem
-
 .product-type-list h4
   margin: 0
   padding: 1rem
   border-bottom: 1px rgba(0, 0, 0, 0.1) solid
+.margin-left
+  margin-left: .5rem
+.margin-top
+  margin-top: .5rem
 .clear
   clear: both
-
 @media screen and (max-width: 1280px)
   .slider-container
     +size(100%, 500px)
-
   .slide-left, .slide-right
     bottom: 30px
-
 @media screen and (max-width: 768px)
   .logo-icon
     width: $navheight
@@ -193,16 +169,12 @@ html, body
     display: inline-block
     float: none
     height: 100%
-
   .slider-container
     +size(100%, 400px)
-
   .slide-left, .slide-right
     bottom: 490px
-
   .product-container
     width: 100% !important
-
 @media screen and (max-width: 480px)
   .logo-content-wrap
     width: 60%
@@ -211,6 +183,5 @@ html, body
     margin: .4rem auto
   .slider-container
     +size(100%, 250px)
-
   .slide-left, .slide-right
     bottom: 250px

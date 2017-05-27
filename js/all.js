@@ -1,4 +1,5 @@
 $(document).ready(function(){
+  $('.modal').modal();
   $(".button-collapse").sideNav();
   $('.carousel.carousel-slider').carousel({fullWidth: true});
   $('.dropdown-button').dropdown({
@@ -78,4 +79,16 @@ $(document).ready(function(){
     });
     sliderPointerMovement();
   });
+
+  $('.update-product-type-modal-trigger').on('click', function(event) {
+    event.preventDefault();
+    $('#updateProductTypeModal').modal('open');
+    $('#udpateproductTypeInput').val($($(this).parent().parent().children('td')[0]).text());
+  });
+
+  $('.delete-check-modal-trigger').on('click', function(event) {
+    event.preventDefault();
+    $('#deleteCheckModal').modal('open');
+  })
+
 });

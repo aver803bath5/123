@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+  <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/notosanstc.css">
+  <link rel="stylesheet" href="../css/font-awesome.min.css">
+  <link rel="stylesheet" href="../css/animate.css">
+  <link rel="stylesheet" href="../css/all.css">
+  <title>昇儀股份有限公司</title>
+</head>
+<body>
+  <nav class="black admin-nav">
+    <div class="nav-wrapper">
+      <a href="/admin" class="brand-logo">管理</a>
+      <ul id="nav-mobile" class="right">
+        <li><a href="/admin/product.html">產品管理</a></li>
+        <li><a href="/admin/latest_news.html">最新消息管理</a></li>
+        <li><a href="badges.html">贊助廠商管理</a></li>
+        <li><a href="collapsible.html">聯絡清單管理</a></li>
+      </ul>
+    </div>
+  </nav>
+  <h2 class="center">新增產品(中文版)</h2>
+  <div class="container">
+    <div class="row">
+      <form class="col s12">
+        <div class="input-field col s12">
+          <input id="productName" type="text" class="validate">
+          <label for="productName">產品名稱</label>
+        </div>
+        <div class="input-field col s12">
+          <input id="productModel" type="text" class="validate">
+          <label for="productModel">產品型號</label>
+        </div>
+        <div class="input-field col s12">
+          <select>
+            <option value="" disabled selected>選擇產品種類</option>
+            <option value="1">Option 1</option>
+            <option value="2">Option 2</option>
+            <option value="3">Option 3</option>
+          </select>
+          <label>選擇產品種類</label>
+          <div class="row">
+            <div class="col s12">
+              <button class="btn waves-effect waves-light right blue" type="button" data-target="addProductTypeModal" id="addProductTypeModalTrigger">新增產品種類</button>
+            </div>
+          </div>
+        </div>
+        <div class="col s12">
+          <div class="file-field input-field">
+            <div class="btn">
+              <span>產品照片</span>
+              <input type="file">
+            </div>
+            <div class="file-path-wrapper">
+              <input class="file-path validate" type="text" placeholder="上傳產品照片">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col s12">
+            <textarea id="productDescr">Hello, World!</textarea>
+          </div>
+        </div>
+        <div class="col s12">
+          <button class="btn waves-effect waves-light right" type="submit" name="action">
+            新增產品
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div id="addProductTypeModal" class="modal">
+    <div class="modal-content">
+      <h4>新增產品種類</h4>
+      <div class="row">
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="productType" type="text" class="validate">
+            <label for="productType">產品種類</label>
+          </div>
+        </div>
+        <button class="btn waves-effect waves-light right" type="button" name="action">
+          新增
+        </button>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+  <script src='https://cloud.tinymce.com/stable/tinymce.min.js'></script>
+  <script>
+  tinymce.init({
+    selector: '#productDescr'
+  });
+  </script>
+  <script src="../js/all.js"></script>
+</body>
+</html>

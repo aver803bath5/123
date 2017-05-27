@@ -2,6 +2,9 @@ html, body {
   font-family: "Noto Sans", "Noto Sans CJK TC", sans-serif;
   overflow-x: hidden; }
 
+.nav-slider-wrap {
+  position: relative; }
+
 .nav {
   top: 0;
   left: 0;
@@ -74,7 +77,6 @@ html, body {
   margin-left: 1rem; }
 
 .slider-container {
-  position: relative;
   right: 0;
   transition: 0.8s ease;
   width: 100%;
@@ -163,6 +165,12 @@ html, body {
   margin: 0;
   padding: 1rem;
   border-bottom: 1px rgba(0, 0, 0, 0.1) solid; }
+
+.margin-left {
+  margin-left: 0.5rem; }
+
+.margin-top {
+  margin-top: 0.5rem; }
 
 .clear {
   clear: both; }
